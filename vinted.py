@@ -46,13 +46,17 @@ options.add_argument("--no-sandbox");
 options.add_argument("--disable-dev-shm-usage");
 options.add_argument("user-data-dir=C:\\Users\\yaseen\\AppData\\Local\\Google\\Chrome\\User Data")
 options.add_argument('profile-directory=Profile 5')
-# url='https://www.vinted.co.uk/entertainment/video-games-and-consoles/xbox-one/games/2700309217-ufc-3-xbox-one'
-#Google Chrome 112.0.5615.121#
-#driver = webdriver.Chrome(executable_path=r'C:\chromedriver_win32\chromedriver.exe', options=options)
+url='https://www.vinted.co.uk/entertainment/video-games-and-consoles/xbox-one/games/2700309217-ufc-3-xbox-one'
+# Chrome ChromeOptions = new ChromeOptions();
+#       ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+#       driver = new ChromeDriver(ChromeOptions);
+
+driver = webdriver.Chrome(options=options)
+driver.get("https://www.google.com")
 #save_path = "C:/Users/yaseen/instagram-auto-create-account/image.jpg"
 
 def getOldData(url):
-    #driver.get(url)
+    driver.get(url)
 
     x = driver.find_elements(By.CLASS_NAME, "details-list__item")
     v = {}
